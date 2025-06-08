@@ -4,7 +4,8 @@ import { Menu, X } from 'lucide-react'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-
+import { IoIosMenu } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [showNavbar, setShowNavbar] = useState(true)
@@ -36,13 +37,13 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: showNavbar ? 1 : 0, y: showNavbar ? 0 : -20 }}
         transition={{ duration: 0.3 }}
-        className="fixed top-6 left-1/2  transform -translate-x-1/2 z-[100]"
+        className="fixed top-6 flex flex-col items-start mx-10  transform -translate-x-1/2 z-[100]"
       >
-        <button onClick={toggleMenu} className="transition-all duration-300 cursor-pointer">
+        <button onClick={toggleMenu} className=" transition-all duration-300 cursor-pointer">
           {menuOpen ? (
-            <X size={42} className="text-white transition-transform duration-300 rotate-90" />
+            <RxCross2  className="text-white text-4xl lg:text-5xl transition-transform duration-300 rotate-90" />
           ) : (
-            <Menu size={42} className="text-neutral-600 transition-transform duration-300" />
+            <IoIosMenu  className="text-neutral-600 text-4xl lg:text-5xl transition-transform duration-300" />
           )}
         </button>
       </motion.div>
@@ -51,7 +52,7 @@ const Navbar = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className=" fixed inset-0 z-[99] bg-black flex flex-col justify-center items-center gap-12 text-5xl font-semibold text-stone-200"
+            className="fixed inset-0 z-[99] bg-black flex flex-col justify-center items-center gap-12 text-3xl lg:text-5xl font-semibold text-stone-200 px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -63,13 +64,13 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 40 }}
-                transition={{ duration:0.4}}
+                transition={{ duration: 0.4 }}
                 className="pointer-events-auto"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href={`/${label.toLowerCase() === 'home' ? '' : label.toLowerCase()}`}
+                  href={`/${label.toLowerCase() === 'Home' ? '' : label.toLowerCase()}`}
                   onClick={() => setMenuOpen(false)}
                   className="transition duration-300"
                 >

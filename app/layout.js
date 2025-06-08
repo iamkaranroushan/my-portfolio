@@ -37,7 +37,11 @@ export default function RootLayout({ children }) {
       <body
         className={`hide-scrollbar ${manrope.variable}antialiased`}
       >
-        {children}
+        <main
+          className={`flex-grow w-screen`}
+        >
+          {children}
+        </main>
       </body>
     </html>
   );
