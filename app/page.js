@@ -12,7 +12,8 @@ export default function home() {
       <Hero />
       <Projects />
       {/* Stack Container */}
-      <div className="relative h-[410vh] lg:h-[560vh]">
+      <div className="relative h-[520vh] sm:h-[480vh] md:h-[470vh] lg:h-[520vh]">
+
         {/* Connect (background layer) */}
         <div className="sticky top-0 h-screen">
           <Connect />
