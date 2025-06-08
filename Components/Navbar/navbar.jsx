@@ -37,7 +37,7 @@ const Navbar = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: showNavbar ? 1 : 0, y: showNavbar ? 0 : -20 }}
         transition={{ duration: 0.3 }}
-        className="fixed top-6 flex flex-col items-start mx-10  transform -translate-x-1/2 z-[100]"
+        className="fixed top-6 flex flex-col items-start mx-10 lg:mx-36  transform -translate-x-1/2 z-[100]"
       >
         <button onClick={toggleMenu} className=" transition-all duration-300 cursor-pointer">
           {menuOpen ? (
