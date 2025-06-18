@@ -35,7 +35,7 @@ const quicksand = Quicksand({
 });
 
 export const metadata = {
-  title: "Karan's Portfolio",
+  title: "Karan Roushan | web developer",
 };
 
 export default function RootLayout({ children }) {
