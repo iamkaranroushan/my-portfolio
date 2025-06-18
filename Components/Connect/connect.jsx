@@ -67,10 +67,10 @@ const Connect = () => {
       </div>
 
       {/* Footer */}
-      <div className="border-t mt-20 pt-6 px-6 sm:px-10 lg:px-28 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="border-t  pt-6 px-6 sm:px-10 lg:px-28  text-xs lg:text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-center md:text-left">
           <p>
-            made with <GoHeart className="inline w-4 h-4 text-red-500" /> by KARAN ROUSHAN
+            designed and coded with <GoHeart className="inline w-4 h-4 text-red-500" /> by KARAN ROUSHAN
           </p>
         </div>
         <p className="text-xs text-center md:text-right">
@@ -83,7 +83,6 @@ const Connect = () => {
           >
             www.karanroushan.com
           </Link>{' '}
-          — All rights reserved.
         </p>
       </div>
     </div>

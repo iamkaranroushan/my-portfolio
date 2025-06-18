@@ -12,13 +12,13 @@ const Hero = () => {
       {/* Name Section */}
       <div className="overflow-hidden text-center lg:text-left">
         <motion.div
-          className="leading-[0.9]"
+          className="leading-[0.8]"
           initial={{ x: 1500 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h1 className="text-[65px] sm:text-[90px] md:text-[120px] lg:text-[140px] xl:text-[170px] 2xl:text-[200px] 3xl:text[210px] text-stone-800 font-bold">KARAN</h1>
-          <h1 className="text-[65px] sm:text-[90px] md:text-[120px] lg:text-[140px] xl:text-[170px] 2xl:text-[200px] 3xl:text[210px] text-stone-800 font-bold">ROUSHAN</h1>
+          <h1 className="text-[65px] sm:text-[90px] md:text-[120px] lg:text-[140px] xl:text-[170px] 2xl:text-[200px] 3xl:text[210px] text-stone-800 font-extrabold ">KARAN</h1>
+          <h1 className="text-[65px] sm:text-[90px] md:text-[120px] lg:text-[140px] xl:text-[170px] 2xl:text-[200px] 3xl:text[210px] text-stone-800 font-extrabold ">ROUSHAN</h1>
         </motion.div>
       </div>
 
@@ -41,9 +41,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6, ease: 'easeOut' }}
         >
-          <span className="text-3xl sm:text-4xl lg:text-5xl text-[#575757]"><FaInstagram /></span>
-          <span className="text-3xl sm:text-4xl lg:text-5xl text-[#575757]"><PiGithubLogoBold /></span>
-          <span className="text-3xl sm:text-4xl lg:text-5xl text-[#575757]"><FaLinkedinIn /></span>
+        <span className="text-3xl sm:text-4xl lg:text-5xl text-[#575757]"><PiGithubLogoBold /></span>
+        <span className="text-3xl sm:text-4xl lg:text-5xl text-[#575757]"><FaLinkedinIn /></span>
+        <span className="text-3xl sm:text-4xl lg:text-5xl text-[#575757]"><FaInstagram /></span>
         </motion.div>
 
         {/* Description Text */}

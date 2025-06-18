@@ -1,6 +1,8 @@
 'use client'
-
 import React from 'react'
+import Lottie from "lottie-react"
+import techUsedAnimation from "@/public/animation/tech_used.json"
+
 import {
   FaReact, FaNodeJs, FaGithub, FaHtml5,
   FaCss3Alt, FaFigma,
@@ -16,19 +18,19 @@ const About = () => {
       title: "Who Am I ?",
       description:
         "I was always curious about how things work behind the screen. What began as late-night tinkering with HTML and inspecting elements turned into a real obsession with building digital experiences. That curiosity still drives everything I do.",
-      image: "/images/about1.png"
+      video: "who_am_i.mp4"
     },
     {
       title: "What I Build ?",
       description:
         "I’m a full stack developer who believes clean code and clean design go hand in hand. My stack includes Next.js, React, Tailwind, GraphQL, and Prisma — but what really matters to me is shipping things that are fast, scalable, and delightful to use.",
-      image: "/images/about2.png"
+      video: "who_am_i.mp4"
     },
     {
       title: "What Technologies I Use ?",
       description:
         "Technology is a tool to amplify impact. Whether I’m solving a UI/UX challenge or building out backend logic, I care about the people using what I create. I value simplicity, empathy, and working on things that make a real difference.",
-      image: "/images/about3.png"
+      lottie: techUsedAnimation
     },
   ]
 
@@ -58,12 +60,12 @@ const About = () => {
       {/* About Cards */}
       <div className="flex flex-col px-6 py-16 gap-20 lg:gap-48 lg:py-36 lg:px-28">
         {AboutData.map((about, index) => {
-          const isEven = index % 2 === 0
+          const isEven = index % 2 === 0;
           return (
             <div
               key={index}
               className={`flex flex-col-reverse lg:flex-row items-center justify-between gap-14 lg:gap-28 
-                ${!isEven ? 'lg:flex-row-reverse' : ''}`}
+              ${!isEven ? 'lg:flex-row-reverse' : ''}`}
             >
               {/* Text Content */}
               <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
@@ -71,13 +73,28 @@ const About = () => {
                 <p className="text-base sm:text-lg lg:text-2xl text-muted-foreground">{about.description}</p>
               </div>
 
-              {/* Image */}
-              <div
-                className="w-full lg:w-[900px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-3xl bg-stone-200 bg-center bg-cover"
-                // style={{ backgroundImage: `url(${about.image})` }}
-              />
+              {/* Media (Video or Lottie) */}
+              <div className="w-full lg:w-[900px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-3xl overflow-hidden">
+                {about.video ? (
+                  <video
+                    className="w-full h-full object-cover"
+                    src={`/animation/${about.video}`}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                ) : about.lottie ? (
+                  <Lottie
+                    animationData={about.lottie}
+                    loop
+                    autoplay
+                    className="w-full h-full"
+                  />
+                ) : null}
+              </div>
             </div>
-          )
+          );
         })}
       </div>
 
