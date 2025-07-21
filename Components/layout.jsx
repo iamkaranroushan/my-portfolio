@@ -61,7 +61,7 @@ const Layout = ({ children }) => {
                 </svg>
             </div>
 
-            <main className="flex-grow justify-center w-full mt-14">
+            <main className="flex-grow justify-center w-full">
                 {children}
             </main>
         </div>
