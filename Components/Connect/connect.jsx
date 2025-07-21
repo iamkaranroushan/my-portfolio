@@ -1,13 +1,13 @@
 'use client'
 
 import React from 'react'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaInstagram , FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { GoHeart } from 'react-icons/go'
 import Link from 'next/link'
 
 const Connect = () => {
   return (
-    <div className="w-full">
+    <div  className="w-full ">
       {/* Header */}
       <div className="px-6 py-10 sm:py-16 sm:px-10 lg:px-28">
         <h3 className="mt-20 sm:mt-4 md:mt-0 text-[40px] sm:text-[100px] md:text-[120px] xl:text-[130px] 2xl:text-[150px] 3xl:text-[160px] 4xl:text-[180px] leading-none font-bold text-neutral-800 mb-6">
@@ -53,12 +53,12 @@ const Connect = () => {
                   <FaLinkedin />
                 </Link>
                 <Link
-                  href="https://twitter.com"
+                  href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:scale-110 hover:text-sky-500 transition-transform duration-300"
+                  className="hover:scale-110 hover:text-pink-500 transition-transform duration-300"
                 >
-                  <FaTwitter />
+                  <FaInstagram />
                 </Link>
               </div>
             </div>
