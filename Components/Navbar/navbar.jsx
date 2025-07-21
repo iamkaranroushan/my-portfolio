@@ -1,34 +1,34 @@
-'use client'
+"use client";
 
-import { Menu, X } from 'lucide-react'
-import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { IoIosMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [showNavbar, setShowNavbar] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  const toggleMenu = () => setMenuOpen(prev => !prev)
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setShowNavbar(false) // Scrolling down
+        setShowNavbar(false); // Scrolling down
       } else {
-        setShowNavbar(true) // Scrolling up
+        setShowNavbar(true); // Scrolling up
       }
 
-      setLastScrollY(currentScrollY)
-    }
+      setLastScrollY(currentScrollY);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollY])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
     <>
@@ -39,11 +39,14 @@ const Navbar = () => {
         transition={{ duration: 0.3 }}
         className="fixed top-6 flex flex-col items-start mx-10 lg:mx-36  transform -translate-x-1/2 z-[100]"
       >
-        <button onClick={toggleMenu} className=" transition-all duration-300 cursor-pointer">
+        <button
+          onClick={toggleMenu}
+          className=" transition-all duration-300 cursor-pointer"
+        >
           {menuOpen ? (
-            <RxCross2  className="text-white text-4xl lg:text-5xl transition-transform duration-300 rotate-90" />
+            <RxCross2 className="text-white text-4xl lg:text-5xl transition-transform duration-300 rotate-90" />
           ) : (
-            <IoIosMenu  className="text-neutral-600 text-4xl lg:text-5xl transition-transform duration-300" />
+            <IoIosMenu className="text-neutral-600 text-4xl lg:text-5xl transition-transform duration-300" />
           )}
         </button>
       </motion.div>
@@ -58,7 +61,7 @@ const Navbar = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
           >
-            {['Home', 'Projects', 'About', 'Contact'].map((label, index) => (
+            {["Home", "Projects", "About", "Connect"].map((label, index) => (
               <motion.div
                 key={label}
                 initial={{ opacity: 0, y: 40 }}
@@ -70,7 +73,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href={`/${label.toLowerCase() === 'Home' ? '' : label.toLowerCase()}`}
+                  href={`#${label.toLowerCase()}`} // 👈 change to use #id
                   onClick={() => setMenuOpen(false)}
                   className="transition duration-300"
                 >
@@ -82,7 +85,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
