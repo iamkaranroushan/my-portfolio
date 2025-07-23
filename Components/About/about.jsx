@@ -2,6 +2,7 @@
 import React from "react";
 import Lottie from "lottie-react";
 import techUsedAnimation from "@/public/animation/tech_used.json";
+import buildAnimation from "@/public/animation/build.json";
 
 import { BiLogoPostgresql } from "react-icons/bi";
 import { TbBrandMongodb } from "react-icons/tb";
@@ -32,13 +33,13 @@ const About = () => {
       title: "Who Am I ?",
       description:
         "I'm Karan, a professional full-stack software engineer with over 4 years of hands-on experience building scalable web applications and designing robust system architectures. I love challenges, and always excited to solve and learn something new from it.",
-      video: "who_am_i.mp4",
+      lottie: buildAnimation,
     },
     {
       title: "What I Build ?",
       description:
         "I build full-fledged platforms, admin panels, and developer-focused tools using modern frameworks. I'm experienced in designing and developing user-friendly interfaces and seamless user experiences. I also create custom animations, like the ones used in this portfolio, to elevate product aesthetics. Recently, I've been focusing on building SaaS tools that solve real problems and offer standout UX.",
-      video: "who_am_i.mp4",
+      lottie: buildAnimation,
     },
     {
       title: "What Technologies I Use ?",
@@ -78,7 +79,7 @@ const About = () => {
           Me ?
         </h2>
       </div>
-      <span  id="about"/>
+      <span id="about" />
 
       {/* About Cards */}
       <div className="flex flex-col px-6 py-16 gap-20 lg:gap-48 lg:py-36 lg:px-28">
@@ -159,7 +160,7 @@ const About = () => {
       </div>
 
       {/* Final Section */}
-      <div  className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
+      <div className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
         <h2 className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
           Connect
         </h2>
