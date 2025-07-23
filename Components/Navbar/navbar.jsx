@@ -46,7 +46,7 @@ const Navbar = () => {
           {menuOpen ? (
             <RxCross2 className="text-white text-4xl lg:text-5xl transition-transform duration-300 rotate-90" />
           ) : (
-            <IoIosMenu className="text-neutral-600 text-4xl lg:text-5xl transition-transform duration-300" />
+            <IoIosMenu className="text-gray-400 text-4xl lg:text-5xl transition-transform duration-300" />
           )}
         </button>
       </motion.div>
