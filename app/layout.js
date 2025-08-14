@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/Components/Navbar/navbar";
 import Layout from "@/Components/layout";
 import { Bricolage_Grotesque } from "next/font/google";
+import DraggableBox from "@/Components/draggable";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

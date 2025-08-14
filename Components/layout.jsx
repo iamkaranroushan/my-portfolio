@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar/navbar'
+import DraggableBox from "@/Components/draggable";
 
 const Layout = ({ children }) => {
     const [scrollProgress, setScrollProgress] = useState(0);
@@ -34,33 +35,8 @@ const Layout = ({ children }) => {
                     style={{ height: `${scrollProgress * 2}px` }}
                 />
             </div>
-
             {/* Small Screen Circular Progress */}
-            <div className="block lg:hidden fixed top-5 right-6 z-50">
-                <svg width="60" height="60" className="transform -rotate-90">
-                    <circle
-                        cx="30"
-                        cy="30"
-                        r={radius}
-                        stroke="#E5E7EB" // light gray background circle
-                        strokeWidth={stroke}
-                        fill="transparent"
-                    />
-                    <circle
-                        cx="30"
-                        cy="30"
-                        r={radius}
-                        stroke="#000000" // your primary color
-                        strokeWidth={stroke}
-                        fill="transparent"
-                        strokeDasharray={circumference}
-                        strokeDashoffset={offset}
-                        strokeLinecap="round"
-                        className="transition-all duration-200"
-                    />
-                </svg>
-            </div>
-
+           
             <main className="flex-grow justify-center w-full">
                 {children}
             </main>

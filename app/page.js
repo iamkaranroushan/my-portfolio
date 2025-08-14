@@ -15,7 +15,7 @@ export default function home() {
       {/* Stack Container */}
       <div className="relative h-[600vh] sm:h-[480vh] md:h-[470vh] lg:h-[600vh]">
         {/* Connect (background layer) */}
-        <div  className="sticky top-0 h-screen">
+        <div className="sticky top-0 h-screen">
           <Connect />
         </div>
         {/* About (scrolling above) */}
