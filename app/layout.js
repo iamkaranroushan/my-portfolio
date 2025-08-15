@@ -45,6 +45,19 @@ export default function RootLayout({ children }) {
       <body
         className={`hide-scrollbar ${bricolage.variable}`}
       >
+        <Head>
+          {/* Basic */}
+          <title>Karan Roushan | Full Stack Developer</title>
+          <meta name="description" content="Portfolio of Karan Roushan - Full Stack Web Developer & UI/UX Designer based in India." />
+
+          {/* Open Graph */}
+          <meta property="og:title" content="Karan Roushan | Full Stack Developer" />
+          <meta property="og:description" content="Karan Roushan is a Full Stack Web Developer & UI/UX Designer based in India." />
+          <meta property="og:url" content="https://karanroushan.com" />
+          <meta property="og:type" content="website" />
+
+
+        </Head>
         <main
           className={`flex-grow w-screen`}
         >
