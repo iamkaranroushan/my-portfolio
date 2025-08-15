@@ -37,8 +37,8 @@ const quicksand = Quicksand({
 });
 
 export const metadata = {
-  title: "Karan Roushan | web developer",
-  description:"Karan Roushan -  Full Stack Web Developer & UI/UX Designer based in India."
+  title: "Karan Roushan",
+  description:"Full Stack Web Developer & UI/UX Designer based in India."
 };
 
 export default function RootLayout({ children }) {
