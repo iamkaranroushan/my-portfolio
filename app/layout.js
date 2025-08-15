@@ -38,7 +38,18 @@ const quicksand = Quicksand({
 
 export const metadata = {
   title: "Karan Roushan",
-  description:"Full Stack Web Developer & UI/UX Designer based in India."
+  description:"Full Stack Web Developer & UI/UX Designer based in India.",
+  openGraph: {
+    images: [
+      {
+        url: "/scene.jpg", // replace with your actual image path or full URL
+        width: 1200,
+        height: 630,
+        alt: "Karan Roushan Portfolio Preview",
+      },
+    ],
+  },
+
 };
 
 export default function RootLayout({ children }) {
