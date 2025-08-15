@@ -97,10 +97,6 @@ const Projects = () => {
       {" "}
       {/* Header */}{" "}
       <motion.div
-        initial={{ opacity:0}}
-        whileInView={{opacity:1 }}
-        transition={{duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0 }}
         className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
 
         <motion.h2 

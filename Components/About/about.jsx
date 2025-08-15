@@ -143,13 +143,15 @@ const About = () => {
         <div className="flex flex-col lg:flex-row justify-center items-center gap-20">
           {/* Frontend */}
           <div className="flex-1 space-y-10 w-full">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
+            <motion.div
+             
+             className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
               {frontend.map((tech, index) => (
-                <div key={index} className="flex flex-col items-center group">
+                <div key={index} className="flex flex-col gap-2 items-center group">
                   <motion.div
-                  initial={{  opacity:0, scale: 0,}}
-                  whileInView={{ opacity:1, scale: 1,}}
-                  transition={{duration: 0.8, ease: "easeOut" }}
+                  initial={{  opacity:0 }}
+                  whileInView={{ opacity:1}}
+                  transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.1 }}
                    className="text-4xl group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
@@ -157,28 +159,34 @@ const About = () => {
                   <motion.p
                   initial={{  opacity:0, y: 10,}}
                   whileInView={{ opacity:1, y: 0,}}
-                  transition={{delay:0.4, duration: 0.8, ease: "easeOut" }}
+                  transition={{ delay:0.8, duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.1 }}
                    className="text-lg text-stone-600 font-medium">
                     {tech.name}
                   </motion.p>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Separator */}
-          <div className="hidden lg:block w-px h-[300px] bg-stone-300" />
-
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.1 }}
+            className="hidden lg:block w-px h-[300px] bg-stone-300 origin-bottom"
+          />
           {/* Backend */}
           <div className="flex-1 space-y-10 w-full">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
+            <motion.div
+             className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
               {backend.map((tech, index) => (
-                <div key={index} className="flex flex-col items-center group">
+                <div key={index} className="flex flex-col gap-2 items-center group">
                   <motion.div
-                    initial={{  opacity:0, scale: 0,}}
-                    whileInView={{ opacity:1, scale: 1,}}
-                    transition={{duration: 0.8, ease: "easeOut" }}
+                    initial={{  opacity:0}}
+                    whileInView={{ opacity:1}}
+                    transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.1 }}
                    className="text-4xl group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
@@ -186,23 +194,28 @@ const About = () => {
                   <motion.p
                     initial={{  opacity:0, y: 10,}}
                     whileInView={{ opacity:1, y: 0,}}
-                    transition={{delay:0.4, duration: 0.8, ease: "easeOut" }}
+                    transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.1 }}
                    className="text-lg text-stone-600 font-medium">
                     {tech.name}
                   </motion.p>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
 
       {/* Final Section */}
       <div className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
-        <h2 className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
+        <motion.h2
+          initial={{  scale: 0,}}
+          whileInView={{ scale: 1,}}
+          transition={{duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.1 }}
+         className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
           Connect
-        </h2>
+        </motion.h2>
       </div>
       <span id="connect" />
     </div>
