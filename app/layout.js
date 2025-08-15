@@ -4,6 +4,7 @@ import Navbar from "@/Components/Navbar/navbar";
 import Layout from "@/Components/layout";
 import { Bricolage_Grotesque } from "next/font/google";
 import DraggableBox from "@/Components/draggable";
+import Head from "next/head";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -45,7 +46,7 @@ export default function RootLayout({ children }) {
       <body
         className={`hide-scrollbar ${bricolage.variable}`}
       >
-        <Head>
+        <Head >
           {/* Basic */}
           <title>Karan Roushan | Full Stack Developer</title>
           <meta name="description" content="Portfolio of Karan Roushan - Full Stack Web Developer & UI/UX Designer based in India." />
