@@ -43,7 +43,7 @@ export const metadata = {
     images: [
       {
         url: "/scene.jpg", // replace with your actual image path or full URL
-        width: 1200,
+        width: 630,
         height: 630,
         alt: "Karan Roushan Portfolio Preview",
       },
