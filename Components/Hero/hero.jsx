@@ -28,8 +28,8 @@ const Hero = () => {
         }}
         className="absolute bottom-0 right-0 "
       >
-        <div className="bg-black px-6 py-3 lg:px-10 lg:py-6 lg:mb-[-20] rounded-ss-lg shadow-lg flex flex-col justify-center items-center">
-          <span className="text-xs sm:text-sm font-medium text-stone-400">
+        <div className="bg-black px-6 py-3 lg:px-10 lg:py-6 rounded-ss-lg ">
+          <span className=" flex flex-col justify-center items-center text-xs sm:text-sm font-medium text-stone-400">
             Scroll to see projects
           </span>
         </div>
@@ -64,9 +64,9 @@ const Hero = () => {
             ease: "easeInOut",
             times: [0, 0.4, 1],
           }}
-          className=" text-stone-800 font-semibold text-[65px] sm:text-[64px] md:text-[180px] lg:text-[200px]  pt-48 lg:pt-80 "
+          className="text-stone-800 font-semibold text-[65px] sm:text-[64px] md:text-[180px] lg:text-[200px]  pt-48 lg:pt-80 "
         >
-          KARAN{" "}
+           <span className="inline-block translate-x-1">KARAN.</span>
         </motion.h1>
         <div className="mt-10 lg:mt-10 lg:mb-40">
           {" "}
@@ -90,13 +90,13 @@ const Hero = () => {
                 <PiGithubLogoBold className="hover:text-gray-800 text-2xl lg:text-4xl text-stone-500 hover:scale-110 transition duration-300" />
               </Link>{" "}
               <Link
-                href="https://linkedin.com/in/iamkaranroushan"
+                href="https://linkedin.com/in/karanroushan"
                 target="_blank"
               >
                 <FaLinkedinIn className="hover:text-blue-400 text-2xl lg:text-4xl text-stone-500 hover:scale-110 transition duration-300" />
               </Link>{" "}
               <Link
-                href="https://instagram.com/iamkaranroushan"
+                href="https://instagram.com/karandoescode"
                 target="_blank"
               >
                 <FaInstagram className="hover:text-pink-400 text-2xl lg:text-4xl text-stone-500  hover:scale-110 transition duration-300" />

@@ -51,7 +51,7 @@ const Connect = () => {
                     <FaGithub />
                   </Link>{" "}
                   <Link
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/in/karanroushan"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:scale-110 hover:text-blue-600 transition-transform duration-300"
@@ -59,7 +59,7 @@ const Connect = () => {
                     <FaLinkedin />
                   </Link>{" "}
                   <Link
-                    href="https://instagram.com"
+                    href="https://instagram.com/karandoescode"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:scale-110 hover:text-pink-500 transition-transform duration-300"

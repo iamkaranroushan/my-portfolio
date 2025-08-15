@@ -8,7 +8,7 @@ import { RiNextjsLine } from "react-icons/ri";
 import { GrGraphQl } from "react-icons/gr";
 import { SiTailwindcss, SiPrisma } from "react-icons/si";
 import { IoLogoFirebase } from "react-icons/io5";
-
+import {motion} from "framer-motion";
 // ICON MAP
 const iconMap = {
   RiNextjsLine: RiNextjsLine,
@@ -92,14 +92,26 @@ const Projects = () => {
   ];
 
   return (
-    <div className="w-full">
+    <motion.div
+      className="w-full">
       {" "}
       {/* Header */}{" "}
-      <div className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
-        <h2 className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
+      <motion.div
+        initial={{ opacity:0}}
+        whileInView={{opacity:1 }}
+        transition={{duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0 }}
+        className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
+
+        <motion.h2 
+        initial={{  scale: 0,}}
+        whileInView={{ scale: 1,}}
+        transition={{duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+        className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
           Projects{" "}
-        </h2>{" "}
-      </div>{" "}
+        </motion.h2>{" "}
+      </motion.div>{" "}
       <span id="projects" />
       {/* Project Cards */}{" "}
       <div className="flex flex-col space-y-24 lg:space-y-40 py-24 lg:mb-30 px-6 sm:px-10 lg:px-28">
@@ -143,17 +155,26 @@ const Projects = () => {
                   </div>{" "}
                 </div>{" "}
               </div>
+
+
               {/* 👇 Desktop Layout */}{" "}
-              <div
+              <motion.div
+              
+
                 className={`hidden lg:flex h-[80vh] justify-between items-center gap-20 xl:gap-36 ${
                   !isEven ? "flex-row-reverse" : ""
                 }`}
               >
                 {/* 👇 Image or Lottie Section */}{" "}
-                <div className="w-full lg:w-[900px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-3xl overflow-hidden bg-gray-100">
+                <motion.div
+                initial={{ opacity:0, x: !isEven? 500 : -500 , }}
+                whileInView={{ opacity:1, x: 0  ,}}
+                transition={{ duration: 1.6, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.2 }}
+                 className="w-full lg:w-[900px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-3xl overflow-hidden bg-gray-100">
                   {" "}
                   {project.image ? (
-                    <div className="w-full h-full bg-cover bg-center bg-gray-100" />
+                    <div className="w-full h-full bg-cover bg-gradient-to-b from-gray-100 to-gray-500 " />
                   ) : (
                     <Lottie
                       animationData={uiCardAnimation}
@@ -162,16 +183,30 @@ const Projects = () => {
                       className="w-full h-full object-contain origin-center"
                     />
                   )}{" "}
-                </div>
+                </motion.div>
+
                 {/* 👇 Text Section */}{" "}
-                <div className="w-[50%] flex flex-col items-start gap-4">
-                  <div className="flex justify-between items-center w-full">
+                <motion.div
+                  className="w-[50%] flex flex-col items-start gap-4">
+                  
+                  <motion.div
+                  initial={{opacity:0, y: 60, }}
+                  whileInView={{opacity:1, y : 0}}
+                  transition={{delay:0.2, duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.4 }}
+                   className="flex justify-between items-center w-full">
                     <p className="text-[120px] xl:text-[150px] font-semibold text-primary/10">
                       {" "}
                       {projectNumber}{" "}
                     </p>{" "}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
+                  </motion.div>
+
+                  <motion.div
+                  initial={{opacity:0, y: 60, }}
+                  whileInView={{opacity:1, y : 0}}
+                  transition={{delay:0.4, duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.2 }}
+                   className="flex flex-wrap gap-2">
                     {" "}
                     {project.tech_used.map((tech, i) => (
                       <span
@@ -181,16 +216,34 @@ const Projects = () => {
                         {tech}{" "}
                       </span>
                     ))}{" "}
-                  </div>
-                  <p className="text-base sm:text-lg lg:text-2xl text-muted-foreground">
+                  </motion.div>
+                  {/*title*/}
+                  <motion.p
+                  initial={{opacity:0, y: 60, }}
+                  whileInView={{opacity:1, y : 0}}
+                  transition={{delay:0.4, duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.2 }}
+                   className="text-base sm:text-lg lg:text-2xl text-muted-foreground">
                     {" "}
                     {project.description}{" "}
-                  </p>
-                  <h3 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-stone-800">
+                  </motion.p>
+                  {/*description*/}
+                  <motion.h3
+                  initial={{opacity:0, y: 60, }}
+                  whileInView={{opacity:1, y : 0}}
+                  transition={{delay:0.6, duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.1 }}
+                   className="text-4xl sm:text-5xl lg:text-7xl font-bold text-stone-800">
                     {" "}
                     {project.title}{" "}
-                  </h3>
-                  <div className="flex items-center">
+                  </motion.h3>
+                  {/*links*/}
+                  <motion.div
+                  initial={{opacity:0, y: 60, }}
+                  whileInView={{opacity:1, y : 0}}
+                  transition={{delay:0.6, duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.1 }}
+                   className="flex items-center">
                     <Link
                       href={project.live}
                       target="_blank"
@@ -207,14 +260,16 @@ const Projects = () => {
                     >
                       GitHub{" "}
                     </Link>{" "}
-                  </div>{" "}
-                </div>{" "}
-              </div>{" "}
+                  </motion.div>{" "}
+
+                </motion.div>{" "}
+
+              </motion.div>{" "}
             </div>
           );
         })}{" "}
       </div>{" "}
-    </div>
+    </motion.div>
   );
 };
 

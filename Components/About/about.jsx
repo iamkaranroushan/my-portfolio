@@ -26,7 +26,7 @@ import {
   SiTypescript,
   j,
 } from "react-icons/si";
-
+import {motion} from "framer-motion";
 const About = () => {
   const AboutData = [
     {
@@ -75,9 +75,14 @@ const About = () => {
     <div className="w-full">
       {/* Header */}
       <div className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
-        <h2 className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
+        <motion.h2
+          initial={{  scale: 0,}}
+          whileInView={{ scale: 1,}}
+          transition={{duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.1 }}
+         className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
           Me ?
-        </h2>
+        </motion.h2>
       </div>
       <span id="about" />
 
@@ -93,12 +98,26 @@ const About = () => {
             >
               {/* Text Content */}
               <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
-                <h3 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-stone-800">
+                <motion.h3
+                 initial={{  opacity:0, y: 60,}}
+                whileInView={{ opacity:1, y: 0,}}
+                transition={{delay:0.2, duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.1 }}
+                 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-stone-800">
                   {about.title}
-                </h3>
-                <p className="text-base sm:text-lg lg:text-2xl text-muted-foreground">
+                </motion.h3
+                
+                >
+                <motion.p 
+                initial={{  opacity:0, y: 60,}}
+                whileInView={{ opacity:1, y: 0,}}
+                transition={{delay:0.4, duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.1 }}
+                className="text-base sm:text-lg lg:text-2xl text-muted-foreground">
                   {about.description}
-                </p>
+                </motion.p>
+
+                
               </div>
 
               {/* Media (Video or Lottie) */}
@@ -127,12 +146,22 @@ const About = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
               {frontend.map((tech, index) => (
                 <div key={index} className="flex flex-col items-center group">
-                  <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
+                  <motion.div
+                  initial={{  opacity:0, scale: 0,}}
+                  whileInView={{ opacity:1, scale: 1,}}
+                  transition={{duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.1 }}
+                   className="text-4xl group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
-                  </div>
-                  <p className="text-lg text-stone-600 font-medium">
+                  </motion.div>
+                  <motion.p
+                  initial={{  opacity:0, y: 10,}}
+                  whileInView={{ opacity:1, y: 0,}}
+                  transition={{delay:0.4, duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.1 }}
+                   className="text-lg text-stone-600 font-medium">
                     {tech.name}
-                  </p>
+                  </motion.p>
                 </div>
               ))}
             </div>
@@ -146,12 +175,22 @@ const About = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
               {backend.map((tech, index) => (
                 <div key={index} className="flex flex-col items-center group">
-                  <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
+                  <motion.div
+                    initial={{  opacity:0, scale: 0,}}
+                    whileInView={{ opacity:1, scale: 1,}}
+                    transition={{duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.1 }}
+                   className="text-4xl group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
-                  </div>
-                  <p className="text-lg text-stone-600 font-medium">
+                  </motion.div>
+                  <motion.p
+                    initial={{  opacity:0, y: 10,}}
+                    whileInView={{ opacity:1, y: 0,}}
+                    transition={{delay:0.4, duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.1 }}
+                   className="text-lg text-stone-600 font-medium">
                     {tech.name}
-                  </p>
+                  </motion.p>
                 </div>
               ))}
             </div>
