@@ -52,24 +52,22 @@ const Hero = () => {
       >
         {/* Name */}{" "}
         <motion.h1
-          initial={{
-            letterSpacing: "-10px",
-          }}
-          animate={{
-            letterSpacing: isMobile ? "12px" : "60px",
-          }}
+          initial={{ letterSpacing: "clamp(-0.2rem, -1vw, -0.5rem)" }}
+          animate={{ letterSpacing: "clamp(1rem, 6vw, 6rem)" }}   
           transition={{
             delay: 0.8,
             duration: 0.7,
-            ease: "easeInOut",
+            ease: "easeOut",
             times: [0, 0.4, 1],
           }}
-          className="text-stone-800 font-semibold text-[65px] sm:text-[64px] md:text-[180px] lg:text-[200px]  pt-48 lg:pt-80 "
+          className="text-stone-800 font-semibold text-[clamp(4rem,12vw,40rem)] pt-48 lg:pt-80 "
         >
-           <span className="inline-block translate-x-1">KARAN.</span>
+           <span className="inline-block translate-x-2 md:translate-x-8">KARAN</span>
         </motion.h1>
+
+        
         <div className="mt-10 lg:mt-10 lg:mb-40">
-          {" "}
+          
           {
             <motion.div
               className="flex justify-center mb-4  space-x-6 text-white text-3xl  "
