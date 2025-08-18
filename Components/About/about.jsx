@@ -74,13 +74,13 @@ const About = () => {
   return (
     <div className="w-full">
       {/* Header */}
-      <div className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
+      <div className="flex justify-center bg-black text-white py-[clamp(8rem,10vw,20rem)]">
         <motion.h2
           initial={{  scale: 0,}}
           whileInView={{ scale: 1,}}
           transition={{duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
-         className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
+         className="text-[clamp(2rem,4vw,4rem)] text-stone-400">
           Me ?
         </motion.h2>
       </div>
@@ -103,7 +103,7 @@ const About = () => {
                 whileInView={{ opacity:1, y: 0,}}
                 transition={{delay:0.2, duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.1 }}
-                 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-stone-800">
+                 className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800">
                   {about.title}
                 </motion.h3
                 
@@ -113,11 +113,9 @@ const About = () => {
                 whileInView={{ opacity:1, y: 0,}}
                 transition={{delay:0.4, duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.1 }}
-                className="text-base sm:text-lg lg:text-2xl text-muted-foreground">
+                className="text-[clamp(1rem,1.7vw,1.5rem)] text-muted-foreground">
                   {about.description}
-                </motion.p>
-
-                
+                </motion.p>                
               </div>
 
               {/* Media (Video or Lottie) */}
@@ -153,7 +151,7 @@ const About = () => {
                   whileInView={{ opacity:1}}
                   transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.1 }}
-                   className="text-4xl group-hover:scale-110 transition-transform duration-300">
+                   className="text-[clamp(2rem,2vw,5rem)] group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
                   </motion.div>
                   <motion.p
@@ -161,7 +159,7 @@ const About = () => {
                   whileInView={{ opacity:1, y: 0,}}
                   transition={{ delay:0.8, duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.1 }}
-                   className="text-lg text-stone-600 font-medium">
+                   className="text-[clamp(1rem,2vh,5rem)] text-stone-600 font-medium">
                     {tech.name}
                   </motion.p>
                 </div>
@@ -188,7 +186,7 @@ const About = () => {
                     whileInView={{ opacity:1}}
                     transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.1 }}
-                   className="text-4xl group-hover:scale-110 transition-transform duration-300">
+                   className="text-[clamp(2rem,2vw,5rem)] group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
                   </motion.div>
                   <motion.p
@@ -196,7 +194,7 @@ const About = () => {
                     whileInView={{ opacity:1, y: 0,}}
                     transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.1 }}
-                   className="text-lg text-stone-600 font-medium">
+                   className="text-[clamp(1rem,2vh,5rem)] text-stone-600 font-medium">
                     {tech.name}
                   </motion.p>
                 </div>
@@ -207,13 +205,13 @@ const About = () => {
       </div>
 
       {/* Final Section */}
-      <div className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
+      <div className="flex justify-center bg-black text-white py-[clamp(8rem,10vw,20rem)]">
         <motion.h2
           initial={{  scale: 0,}}
           whileInView={{ scale: 1,}}
           transition={{duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
-         className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
+         className="text-[clamp(2rem,4vw,4rem)] text-stone-400">
           Connect
         </motion.h2>
       </div>

@@ -4,7 +4,7 @@ import React from "react";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 import { GoHeart } from "react-icons/go";
 import Link from "next/link";
-
+import {motion} from "framer-motion";
 const Connect = () => {
   return (
     <div className="w-full min-h-screen flex flex-col ">
@@ -13,13 +13,23 @@ const Connect = () => {
       <div className="px-6  sm:py-30 sm:px-10 lg:px-28 flex-grow">
         {" "}
         {/* Header */}{" "}
-        <h3 className="mt-20 sm:mt-4 md:mt-0 text-[40px] sm:text-[100px] md:text-[120px] xl:text-[130px] 2xl:text-[150px] 3xl:text-[160px] 4xl:text-[180px] leading-none font-bold text-neutral-800 mb-6">
+        <motion.h3 
+        initial={{  y:30 }}
+        whileInView={{ y:0}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+        className="mt-20 sm:mt-4 md:mt-0 text-[40px] sm:text-[100px] md:text-[120px] xl:text-[130px] 2xl:text-[150px] 3xl:text-[160px] 4xl:text-[180px] leading-none font-bold text-neutral-800 mb-6">
           LET'S CONNECT{" "}
-        </h3>{" "}
-        <h2 className="text-base sm:text-xl lg:text-3xl text-muted-foreground max-w-4xl">
+        </motion.h3>{" "}
+        <motion.h2 
+        initial={{  y:30 }}
+        whileInView={{ y:0}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+        className="text-base sm:text-xl lg:text-3xl text-muted-foreground max-w-4xl">
           Have an idea, challenge, or just want to collaborate ? Let me help
           turn your problem into a powerful solution.{" "}
-        </h2>
+        </motion.h2>
         {/* Contact + Socials */}{" "}
         <div className="py-10 sm:py-20">
           <div className="flex flex-col lg:flex-row gap-12">
@@ -38,10 +48,20 @@ const Connect = () => {
                 </p>{" "}
               </div>
               <div>
-                <h4 className="text-2xl sm:text-3xl font-semibold mb-4">
+                <motion.h4 
+                initial={{  y:10 }}
+                whileInView={{ y:0}}
+                transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.1 }}
+                className="text-2xl sm:text-3xl font-semibold mb-4">
                   Socials{" "}
-                </h4>{" "}
-                <div className="flex gap-6 text-2xl sm:text-3xl text-black">
+                </motion.h4>{" "}
+                <motion.div 
+                initial={{ y:10 }}
+                whileInView={{ y:0}}
+                transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.1 }}
+                className="flex gap-6 text-2xl sm:text-3xl text-black">
                   <Link
                     href="https://github.com/iamkaranroushan"
                     target="_blank"
@@ -66,7 +86,7 @@ const Connect = () => {
                   >
                     <FaInstagram />
                   </Link>{" "}
-                </div>{" "}
+                </motion.div>{" "}
               </div>{" "}
             </div>{" "}
           </div>{" "}

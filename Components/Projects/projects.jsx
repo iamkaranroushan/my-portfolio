@@ -95,19 +95,22 @@ const Projects = () => {
     <motion.div
       className="w-full">
       {" "}
+
       {/* Header */}{" "}
       <motion.div
-        className="flex justify-center bg-black text-white py-32 lg:py-48 px-6 sm:px-10">
+        className="flex justify-center bg-black text-white py-[clamp(8rem,10vw,20rem)]">
 
         <motion.h2 
         initial={{  scale: 0,}}
         whileInView={{ scale: 1,}}
         transition={{duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.1 }}
-        className="text-4xl sm:text-6xl md:text-7xl text-stone-400">
+        className="text-[clamp(2rem,4vw,4rem)] text-stone-400">
           Projects{" "}
         </motion.h2>{" "}
       </motion.div>{" "}
+
+
       <span id="projects" />
       {/* Project Cards */}{" "}
       <div className="flex flex-col space-y-24 lg:space-y-40 py-24 lg:mb-30 px-6 sm:px-10 lg:px-28">
@@ -140,11 +143,11 @@ const Projects = () => {
                         ) : null;
                       })}{" "}
                     </div>
-                    <h3 className="text-3xl sm:text-4xl font-bold">
+                    <h3 className="text-[clamp(2rem,5vw,4rem)] font-bold">
                       {" "}
                       {project.title}{" "}
                     </h3>{" "}
-                    <p className="text-sm sm:text-base text-white/80">
+                    <p className="text-[clamp(1rem,1.7vw,1.5rem)] text-white/80">
                       {" "}
                       {project.description}{" "}
                     </p>{" "}
@@ -157,7 +160,7 @@ const Projects = () => {
               <motion.div
               
 
-                className={`hidden lg:flex h-[80vh] justify-between items-center gap-20 xl:gap-36 ${
+                className={`hidden lg:flex h-[80vh] justify-between items-center gap-[clamp(2rem,5vw,8rem)] ${
                   !isEven ? "flex-row-reverse" : ""
                 }`}
               >
@@ -167,7 +170,11 @@ const Projects = () => {
                 whileInView={{ opacity:1, x: 0  ,}}
                 transition={{ duration: 1.6, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.2 }}
-                 className="w-full lg:w-[900px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-3xl overflow-hidden bg-gray-100">
+                 className="w-[clamp(300px,40vw,700px)] rounded-3xl overflow-hidden bg-gray-100"
+                 style={{
+                    height: "clamp(300px, 50vw, 600px)", // 👈 responsive height
+                  }}
+                 >
                   {" "}
                   {project.image ? (
                     <div className="w-full h-full bg-cover bg-gradient-to-b from-gray-100 to-gray-500 " />
@@ -183,7 +190,7 @@ const Projects = () => {
 
                 {/* 👇 Text Section */}{" "}
                 <motion.div
-                  className="w-[50%] flex flex-col items-start gap-4">
+                  className="flex-1 flex flex-col items-start gap-4">
                   
                   <motion.div
                   initial={{opacity:0, y: 60, }}
@@ -191,7 +198,7 @@ const Projects = () => {
                   transition={{delay:0.2, duration: 0.6, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.4 }}
                    className="flex justify-between items-center w-full">
-                    <p className="text-[120px] xl:text-[150px] font-semibold text-primary/10">
+                    <p className="text-[clamp(2rem,6vw,6rem)] font-semibold text-primary/10">
                       {" "}
                       {projectNumber}{" "}
                     </p>{" "}
@@ -207,7 +214,7 @@ const Projects = () => {
                     {project.tech_used.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2 py-1 bg-gray-100 text-black text-sm rounded"
+                        className="px-2 py-1 bg-gray-100 text-black text-[clamp(0.2rem,1.7vw,0.8rem)] rounded"
                       >
                         {tech}{" "}
                       </span>
@@ -219,7 +226,7 @@ const Projects = () => {
                   whileInView={{opacity:1, y : 0}}
                   transition={{delay:0.4, duration: 0.6, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.2 }}
-                   className="text-base sm:text-lg lg:text-2xl text-muted-foreground">
+                   className="text-[clamp(1rem,1.7vw,1.5rem)] text-muted-foreground">
                     {" "}
                     {project.description}{" "}
                   </motion.p>
@@ -229,7 +236,7 @@ const Projects = () => {
                   whileInView={{opacity:1, y : 0}}
                   transition={{delay:0.6, duration: 0.6, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.1 }}
-                   className="text-4xl sm:text-5xl lg:text-7xl font-bold text-stone-800">
+                   className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800">
                     {" "}
                     {project.title}{" "}
                   </motion.h3>

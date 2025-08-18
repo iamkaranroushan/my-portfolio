@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { LuConstruction } from "react-icons/lu";
 
 export default function FloatingBot() {
   const constraintsRef = useRef(null);
@@ -28,7 +29,7 @@ export default function FloatingBot() {
         onDragEnd={(e, info) => {
           setPosition({ x: info.point.x, y: info.point.y });
         }}
-        className="pointer-events-auto w-20 h-20 rounded-full bg-gradient-to-br from-pink-400 to-purple-600 shadow-lg flex items-center justify-center cursor-grab"
+        className="pointer-events-auto w-56 h-20 rounded-md border bg-white shadow-lg flex items-center justify-around cursor-grab"
         style={{
           x: position.x,
           y: position.y,
@@ -36,7 +37,8 @@ export default function FloatingBot() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        🤖
+        <span className="text-3xl"><LuConstruction /></span>
+        <h1 className="text-center text-base">under Development </h1>
       </motion.div>
     </div>
   );

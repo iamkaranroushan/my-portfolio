@@ -52,15 +52,15 @@ const Hero = () => {
       >
         {/* Name */}{" "}
         <motion.h1
-          initial={{ letterSpacing: "clamp(-0.2rem, -1vw, -0.5rem)" }}
-          animate={{ letterSpacing: "clamp(1rem, 6vw, 6rem)" }}   
+          initial={{ letterSpacing: "clamp(0.2rem, 1vw, 0.5rem)" }}
+          animate={{ letterSpacing: "clamp(1rem, 3vw, 6rem)" }}   
           transition={{
             delay: 0.8,
             duration: 0.7,
             ease: "easeOut",
             times: [0, 0.4, 1],
           }}
-          className="text-stone-800 font-semibold text-[clamp(4rem,12vw,40rem)] pt-48 lg:pt-80 "
+          className="text-stone-800 font-semibold text-[clamp(4rem,12vw,40rem)] pt-[clamp(12rem,50vw,20rem)]"
         >
            <span className="inline-block translate-x-2 md:translate-x-8">KARAN</span>
         </motion.h1>
@@ -115,7 +115,7 @@ const Hero = () => {
               delay: 1.6,
               duration: 0.6,
             }}
-            className="text-stone-700 mt-4 px-20 text-lg sm:text-2xl lg:text-3xl "
+            className="text-stone-700 mt-4 px-[clamp(1.25rem,13vw,3rem)]  text-[clamp(1.2rem,1.7vw,1.6rem)]"
           >
             Full Stack Web Developer & UI / UX Designer
           </motion.p>{" "}
@@ -132,7 +132,7 @@ const Hero = () => {
               delay: 2,
               duration: 0.6,
             }}
-            className="flex items-center justify-center gap-3 text-stone-500 mt-2 text-lg sm:text-2xl lg:text-3xl "
+            className="flex items-center justify-center gap-3 text-stone-500 text-[clamp(1.2rem,1.7vw,1.6rem)] "
           >
             Based in India{" "}
           </motion.p>{" "}
