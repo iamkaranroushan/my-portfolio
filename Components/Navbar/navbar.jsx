@@ -93,7 +93,7 @@ const Navbar = () => {
           className="flex justify-center"
         >
           <Link href="#projects">
-            <motion.span className="bg-gray-700 text-[16px] sm:text-[20px] text-gray-200  hover:bg-gray-800 text-white px-6 py-4 lg:px-10 lg:py-4 text-xl font-medium transition duration-300">
+            <motion.span className="bg-black rounded-sm text-[16px] sm:text-[1rem] text-gray-200  hover:bg-black/80 text-white px-6 py-5 lg:px-14 lg:py-6 text-xl font-medium transition duration-300">
               Projects{" "}
             </motion.span>{" "}
           </Link>{" "}

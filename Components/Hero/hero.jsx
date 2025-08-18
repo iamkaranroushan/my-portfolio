@@ -6,6 +6,7 @@ import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { PiGithubLogoBold } from "react-icons/pi";
 import Link from "next/link";
 import { LuGlobe } from "react-icons/lu";
+import { SiScrollreveal } from "react-icons/si";
 
 const Hero = () => {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
@@ -28,8 +29,9 @@ const Hero = () => {
         }}
         className="absolute bottom-0 right-0 "
       >
-        <div className="bg-black px-6 py-3 lg:px-10 lg:py-6 rounded-ss-lg ">
-          <span className=" flex flex-col justify-center items-center text-xs sm:text-sm font-medium text-stone-400">
+        <div className="border border-stone-600 px-6 py-3 flex gap-4 lg:px-10 lg:py-6 rounded-ss-lg ">
+        <span className="text-stone-600 "><SiScrollreveal /></span>
+          <span className=" flex flex-col justify-center items-center text-xs sm:text-sm font-medium text-stone-600">
             Scroll to see projects
           </span>
         </div>
