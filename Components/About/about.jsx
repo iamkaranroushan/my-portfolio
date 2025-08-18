@@ -26,7 +26,7 @@ import {
   SiTypescript,
   j,
 } from "react-icons/si";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 const About = () => {
   const AboutData = [
     {
@@ -42,7 +42,7 @@ const About = () => {
       lottie: buildAnimation,
     },
     {
-      title: "What Technologies I Use ?",
+      title: "Technologies I Use.",
       description:
         "As a full-stack developer, my core expertise lies in building frontend interfaces, backend systems, and efficient APIs. But I don't limit myself there. I'm always tinkering with tools and technologies beyond my main stack. Lately, I've been exploring machine learning and AI, driven by curiosity and the potential they hold in shaping tomorrow's products.",
       lottie: techUsedAnimation,
@@ -76,60 +76,63 @@ const About = () => {
       {/* Header */}
       <div className="flex justify-center bg-black text-white py-[clamp(8rem,10vw,20rem)]">
         <motion.h2
-          initial={{  scale: 0,}}
-          whileInView={{ scale: 1,}}
-          transition={{duration: 0.8, ease: "easeOut" }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
-         className="text-[clamp(2rem,4vw,4rem)] text-stone-400">
+          className="text-[clamp(2rem,4vw,4rem)] text-stone-400"
+        >
           Me ?
         </motion.h2>
       </div>
       <span id="about" />
 
       {/* About Cards */}
-      <div className="flex flex-col px-6 py-16 gap-20 lg:gap-48 lg:py-36 lg:px-28">
+      <div className="flex flex-col px-6 lg:px-28 py-[clamp(4rem,10vw,20rem)] gap-[clamp(8rem,20vw,30rem)] ">
         {AboutData.map((about, index) => {
           const isEven = index % 2 === 0;
           return (
             <div
               key={index}
-              className={`flex flex-col-reverse lg:flex-row items-center justify-between gap-20 xl:gap-36
+              className={`flex flex-col-reverse lg:flex-row items-center justify-between gap-[clamp(2rem,5vw,8rem)]
               ${!isEven ? "lg:flex-row-reverse" : ""}`}
             >
               {/* Text Content */}
-              <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+              <div className="w-full flex-1 space-y-6 text-center lg:text-left">
                 <motion.h3
-                 initial={{  opacity:0, y: 60,}}
-                whileInView={{ opacity:1, y: 0,}}
-                transition={{delay:0.2, duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.1 }}
-                 className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800">
-                  {about.title}
-                </motion.h3
-                
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800"
                 >
-                <motion.p 
-                initial={{  opacity:0, y: 60,}}
-                whileInView={{ opacity:1, y: 0,}}
-                transition={{delay:0.4, duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.1 }}
-                className="text-[clamp(1rem,1.7vw,1.5rem)] text-muted-foreground">
+                  {about.title}
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 60 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="text-[clamp(1rem,1.7vw,1.5rem)] text-muted-foreground"
+                >
                   {about.description}
-                </motion.p>                
+                </motion.p>
               </div>
 
               {/* Media (Video or Lottie) */}
-              <div className="w-full lg:w-[900px] h-[300px] sm:h-[400px] lg:h-[600px] rounded-3xl overflow-hidden">
-                {about.video ? (
-                  <div className="w-full h-full bg-cover bg-center bg-gray-200" />
-                ) : about.lottie ? (
-                  <Lottie
-                    animationData={about.lottie}
-                    loop
-                    autoplay
-                    className="w-full h-full"
-                  />
-                ) : null}
+              <div className="flex-1 flex items-center justify-center">
+                <div className="w-[clamp(300px,40vw,700px)] h-[clamp(300px, 50vw, 600px)] rounded-3xl overflow-hidden ">
+                  {about.video ? (
+                    <div className="w-full h-full bg-cover bg-center bg-gray-200" />
+                  ) : about.lottie ? (
+                    <Lottie
+                      animationData={about.lottie}
+                      loop
+                      autoplay
+                      className="w-full h-full object-contain"
+                    />
+                  ) : null}
+                </div>
               </div>
             </div>
           );
@@ -141,25 +144,28 @@ const About = () => {
         <div className="flex flex-col lg:flex-row justify-center items-center gap-20">
           {/* Frontend */}
           <div className="flex-1 space-y-10 w-full">
-            <motion.div
-             
-             className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
+            <motion.div className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
               {frontend.map((tech, index) => (
-                <div key={index} className="flex flex-col gap-2 items-center group">
+                <div
+                  key={index}
+                  className="flex flex-col gap-2 items-center group"
+                >
                   <motion.div
-                  initial={{  opacity:0 }}
-                  whileInView={{ opacity:1}}
-                  transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
-                  viewport={{ once: true, amount: 0.1 }}
-                   className="text-[clamp(2rem,2vw,5rem)] group-hover:scale-110 transition-transform duration-300">
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="text-[clamp(2rem,2vw,5rem)] group-hover:scale-110 transition-transform duration-300"
+                  >
                     {tech.icon}
                   </motion.div>
                   <motion.p
-                  initial={{  opacity:0, y: 10,}}
-                  whileInView={{ opacity:1, y: 0,}}
-                  transition={{ delay:0.8, duration: 0.8, ease: "easeOut" }}
-                  viewport={{ once: true, amount: 0.1 }}
-                   className="text-[clamp(1rem,2vh,5rem)] text-stone-600 font-medium">
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="text-[clamp(1rem,2vh,5rem)] text-stone-600 font-medium"
+                  >
                     {tech.name}
                   </motion.p>
                 </div>
@@ -177,24 +183,28 @@ const About = () => {
           />
           {/* Backend */}
           <div className="flex-1 space-y-10 w-full">
-            <motion.div
-             className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
+            <motion.div className="grid grid-cols-2 sm:grid-cols-3 gap-10 justify-items-center">
               {backend.map((tech, index) => (
-                <div key={index} className="flex flex-col gap-2 items-center group">
+                <div
+                  key={index}
+                  className="flex flex-col gap-2 items-center group"
+                >
                   <motion.div
-                    initial={{  opacity:0}}
-                    whileInView={{ opacity:1}}
-                    transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.1 }}
-                   className="text-[clamp(2rem,2vw,5rem)] group-hover:scale-110 transition-transform duration-300">
+                    className="text-[clamp(2rem,2vw,5rem)] group-hover:scale-110 transition-transform duration-300"
+                  >
                     {tech.icon}
                   </motion.div>
                   <motion.p
-                    initial={{  opacity:0, y: 10,}}
-                    whileInView={{ opacity:1, y: 0,}}
-                    transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.1 }}
-                   className="text-[clamp(1rem,2vh,5rem)] text-stone-600 font-medium">
+                    className="text-[clamp(1rem,2vh,5rem)] text-stone-600 font-medium"
+                  >
                     {tech.name}
                   </motion.p>
                 </div>
@@ -207,11 +217,12 @@ const About = () => {
       {/* Final Section */}
       <div className="flex justify-center bg-black text-white py-[clamp(8rem,10vw,20rem)]">
         <motion.h2
-          initial={{  scale: 0,}}
-          whileInView={{ scale: 1,}}
-          transition={{duration: 0.8, ease: "easeOut" }}
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.1 }}
-         className="text-[clamp(2rem,4vw,4rem)] text-stone-400">
+          className="text-[clamp(2rem,4vw,4rem)] text-stone-400"
+        >
           Connect
         </motion.h2>
       </div>

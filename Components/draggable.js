@@ -20,7 +20,7 @@ export default function FloatingBot() {
   return (
     <div
       ref={constraintsRef}
-      className="fixed inset-0 pointer-events-none z-[9999]" // full screen invisible layer
+      className="fixed inset-10 pointer-events-none z-[9999]" // full screen invisible layer
     >
       <motion.div
         drag
@@ -29,7 +29,7 @@ export default function FloatingBot() {
         onDragEnd={(e, info) => {
           setPosition({ x: info.point.x, y: info.point.y });
         }}
-        className="pointer-events-auto w-56 h-20 rounded-md border bg-white shadow-lg flex items-center justify-around cursor-grab"
+        className="pointer-events-auto w-[clamp(14rem,10vw,32rem)] px-4 h-20 gap-1 rounded-md border bg-white shadow-lg flex items-center justify-around cursor-grab"
         style={{
           x: position.x,
           y: position.y,
@@ -38,7 +38,7 @@ export default function FloatingBot() {
         whileTap={{ scale: 0.95 }}
       >
         <span className="text-3xl"><LuConstruction /></span>
-        <h1 className="text-center text-base">under Development </h1>
+        <h1 className="text-center text-sm">site under Development </h1>
       </motion.div>
     </div>
   );
