@@ -143,11 +143,11 @@ const Projects = () => {
                         ) : null;
                       })}{" "}
                     </div>
-                    <h3 className="text-[clamp(2rem,5vw,4rem)] font-bold">
+                    <h3 className="text-[clamp(1.5rem,5vw,4rem)] font-bold">
                       {" "}
                       {project.title}{" "}
                     </h3>{" "}
-                    <p className="text-[clamp(1rem,1.7vw,1.5rem)] text-white/80">
+                    <p className="text-[clamp(0.8rem,1.7vw,1.5rem)] text-white/80">
                       {" "}
                       {project.description}{" "}
                     </p>{" "}
@@ -236,7 +236,7 @@ const Projects = () => {
                   whileInView={{opacity:1, y : 0}}
                   transition={{delay:0.6, duration: 0.6, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.1 }}
-                   className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800">
+                   className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800 leading-tighter">
                     {" "}
                     {project.title}{" "}
                   </motion.h3>
