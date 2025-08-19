@@ -155,13 +155,13 @@ const Hero = () => {
         >
           <Link
             href="#connect"
-            className="bg-gray-400 text-[16px] sm:text-[20px] text-gray-200  hover:bg-gray-600 text-white px-6 py-4 lg:px-20 lg:py-6 text-xl font-medium transition duration-300"
+            className="bg-stone-700 text-[16px] sm:text-[20px]   active:bg-stone-600 text-white px-6 py-4 lg:px-20 lg:py-6 text-xl font-medium transition duration-300"
           >
             Connect{" "}
           </Link>{" "}
           <Link
             href="#projects"
-            className="text-[16px] sm:text-[20px]  bg-gray-200 hover:bg-gray-600 hover:text-white text-gray-600 px-6 py-4 backdrop-blur-md lg:px-20 lg:py-6 text-xl font-medium transition duration-300"
+            className="text-[16px] sm:text-[20px] active:bg-stone-600  bg-stone-200  active:text-white text-stone-600 px-6 py-4 backdrop-blur-md lg:px-20 lg:py-6 text-xl font-medium transition duration-300"
           >
             Projects{" "}
           </Link>{" "}

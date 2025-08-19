@@ -65,10 +65,10 @@ const Connect = () => {
                   Contact
                 </h4>*/}
 
-                <button className="bg-black  text-stone-200 px-[clamp(0.8rem,2vw,1rem)] py-[clamp(0.8rem,1vw,1.5rem)] rounded-md text-[clamp(1rem,1vw,1.2rem)] rounded-ee-none rounded-se-none hover:bg-black/80 cursor-pointer transition-all hover:text-white ease-in-out duration-300">
+                <button className="bg-stone-700 active:bg-stone-600  text-stone-200 px-[clamp(0.8rem,2vw,1rem)] py-[clamp(0.8rem,1vw,1.5rem)] rounded-md text-[clamp(1rem,1vw,1.2rem)] rounded-ee-none rounded-se-none  cursor-pointer transition-all hover:text-white ease-in-out duration-300">
                   Mail me
                 </button>
-                <button className="bg-stone-200 px-[clamp(0.8rem,2vw,1rem)] py-[clamp(0.8rem,1vw,1.5rem)] rounded-md text-[clamp(1rem,1vw,1.2rem)]  rounded-ss-none rounded-es-none   hover:bg-stone-200/50 cursor-pointer hover:text-stone-800 transition-all ease-in-out duration-300">
+                <button className="bg-stone-200 text-stone-600 active:bg-stone-600 active:text-white px-[clamp(0.8rem,2vw,1rem)] py-[clamp(0.8rem,1vw,1.5rem)] rounded-md text-[clamp(1rem,1vw,1.2rem)]  rounded-ss-none rounded-es-none cursor-pointer  transition-all ease-in-out duration-300">
                  Book a call
                 </button>
 
@@ -138,6 +138,8 @@ const Connect = () => {
           </Link>
         </p>
       </div>
+
+      
     </div>
   );
 };
