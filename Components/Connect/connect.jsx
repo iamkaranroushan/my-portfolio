@@ -4,99 +4,122 @@ import React from "react";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 import { GoHeart } from "react-icons/go";
 import Link from "next/link";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import { CiMail } from "react-icons/ci";
+import { MdOutlineLocalPhone } from "react-icons/md";
+
 const Connect = () => {
+  const socialLinks = [
+    {
+      Icon: <FaGithub />,
+      title: "Github",
+      display_text: "/iamkaranroushan",
+      link: "https://github.com/iamkaranroushan"
+    },
+    {
+      Icon: <FaLinkedin />,
+      title: "Linked In",
+      display_text: "/karanroushan",
+      link: "https://linkedin.com/in/karanroushan"
+    },
+    {
+      Icon: <FaInstagram />,
+      title: "Instagram",
+      display_text: "/karandoescode",
+      link: "https://instagram.com/karandoescode"
+    },
+  ]
+
   return (
     <div className="w-full min-h-screen flex flex-col ">
-      {" "}
+
       {/* Main Content */}
       <div className="px-6  sm:py-30 sm:px-10 lg:px-28 flex-grow">
-        {" "}
-        {/* Header */}{" "}
-        <motion.h3 
-        initial={{  y:30 }}
-        whileInView={{ y:0}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.1 }}
-        className="mt-20 sm:mt-4 md:mt-0 text-[40px] sm:text-[100px] md:text-[120px] xl:text-[130px] 2xl:text-[150px] 3xl:text-[160px] 4xl:text-[180px] leading-none font-bold text-neutral-800 mb-6">
-          LET'S CONNECT{" "}
-        </motion.h3>{" "}
-        <motion.h2 
-        initial={{  y:30 }}
-        whileInView={{ y:0}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.1 }}
-        className="text-base sm:text-xl lg:text-3xl text-muted-foreground max-w-4xl">
+        {/* Header */}
+        <motion.h3
+          initial={{ y: 30 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="mt-20 sm:mt-4 md:mt-0 text-[clamp(2rem,5vw,4rem)] leading-none font-bold text-neutral-800 mb-6">
+          LET'S CONNECT
+        </motion.h3>
+
+        <motion.h2
+          initial={{ y: 30 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="text-[clamp(1rem,1.7vw,1.5rem)] max-w-4xl text-muted-foreground ">
           Have an idea, challenge, or just want to collaborate ? Let me help
-          turn your problem into a powerful solution.{" "}
+          turn your problem into a powerful solution.
         </motion.h2>
-        {/* Contact + Socials */}{" "}
+
+        {/* Contact + Socials */}
         <div className="py-10 sm:py-20">
           <div className="flex flex-col lg:flex-row gap-12">
-            {" "}
-            {/* Contact Info */}{" "}
+            {/* Contact Info */}
             <div className="flex-1 space-y-10 text-neutral-700 text-base sm:text-lg lg:text-xl">
               <div>
-                <h4 className="text-2xl sm:text-3xl font-semibold mb-4">
-                  Contact{" "}
-                </h4>{" "}
-                <p className="hover:scale-[1.02] hover:font-semibold hover:text-black cursor-pointer transition-all duration-300">
-                  Phone : +91 - 7765031021{" "}
-                </p>{" "}
-                <p className="hover:scale-[1.02] hover:font-semibold hover:text-black cursor-pointer transition-all duration-300">
-                  Email: karan .122 roushan @gmail.com{" "}
-                </p>{" "}
+                {/*<h4 className="text-[clamp(1.5rem,1.7vw,1.8rem)] font-semibold text-stone-700"  >
+                  Contact
+                </h4>*/}
+
+                <button className="bg-black  text-stone-200 px-[clamp(0.8rem,2vw,1rem)] py-[clamp(0.8rem,1vw,1.5rem)] rounded-md text-[clamp(1rem,1vw,1.2rem)] rounded-ee-none rounded-se-none hover:bg-black/80 cursor-pointer transition-all hover:text-white ease-in-out duration-300">
+                  Mail me
+                </button>
+                <button className="bg-stone-200 px-[clamp(0.8rem,2vw,1rem)] py-[clamp(0.8rem,1vw,1.5rem)] rounded-md text-[clamp(1rem,1vw,1.2rem)]  rounded-ss-none rounded-es-none   hover:bg-stone-200/50 cursor-pointer hover:text-stone-800 transition-all ease-in-out duration-300">
+                 Book a call
+                </button>
+
               </div>
-              <div>
-                <motion.h4 
-                initial={{  y:10 }}
-                whileInView={{ y:0}}
-                transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.1 }}
-                className="text-2xl sm:text-3xl font-semibold mb-4">
-                  Socials{" "}
-                </motion.h4>{" "}
-                <motion.div 
-                initial={{ y:10 }}
-                whileInView={{ y:0}}
-                transition={{delay:0.8, duration: 0.8, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.1 }}
-                className="flex gap-6 text-2xl sm:text-3xl text-black">
-                  <Link
-                    href="https://github.com/iamkaranroushan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:scale-110 hover:text-gray-800 transition-transform duration-300"
-                  >
-                    <FaGithub />
-                  </Link>{" "}
-                  <Link
-                    href="https://linkedin.com/in/karanroushan"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:scale-110 hover:text-blue-600 transition-transform duration-300"
-                  >
-                    <FaLinkedin />
-                  </Link>{" "}
-                  <Link
-                    href="https://instagram.com/karandoescode"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:scale-110 hover:text-pink-500 transition-transform duration-300"
-                  >
-                    <FaInstagram />
-                  </Link>{" "}
-                </motion.div>{" "}
-              </div>{" "}
-            </div>{" "}
-          </div>{" "}
-        </div>{" "}
+
+              {/*socials*/}
+
+              <div className="flex flex-col space-y-4 justify-center">
+                {/*icons heading */}
+                {/*<span className="text-[clamp(1.5rem,1.7vw,1.8rem)] font-semibold text-stone-700">Socials</span>
+                {/*icons */}
+                <motion.div
+                  initial={{ y: 10 }}
+                  whileInView={{ y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className=" flex lg:flex-row flex-wrap items-center gap-6">
+                  {
+                    socialLinks.map((Item, index) => (
+
+                      <div
+                        key={index}
+                        className=""
+                      >
+                        <Link
+                          href={Item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex gap-1 text-stone-500 hover:text-stone-800 transition-all ease-in-out duration-300"
+                        >
+                          <span className="text-[clamp(1.5rem,1.7vw,1.5rem)]">
+                            {Item.Icon}
+                          </span>
+                          <h3 className="hidden lg:block text-[clamp(0.8rem,2vw,1rem)] font-normal  ">{Item.display_text}</h3>
+                        </Link>
+                      </div>
+                    ))
+                  }
+
+                </motion.div>
+              </div>
+
+            </div>
+          </div>
+        </div>
       </div>
+
       {/* Footer */} {/* Footer */} {/* Footer */}
-      <div
-        className="border-t border-b px-6 sm:px-10 lg:px-28 text-xs lg:text-sm text-gray-500 
-                flex flex-col md:flex-row justify-between items-center gap-4 w-full py-4"
-      >
+
+      <div className="border-t border-b px-6 sm:px-10 lg:px-28 text-xs lg:text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4 w-full py-4">
+
         <div className="text-left text-stone-400">
           <p>
             designed and coded with{" "}
