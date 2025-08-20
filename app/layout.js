@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
         <main
           className={`flex-grow w-screen`}
         >
-        <DraggableBox />
+        
           {children}
         </main>
       </body>

@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   const mobileNavLinks = ["Home", "Projects", "About", "Connect"];
-  const DesktopNavLinks = ["HOME", "ABOUT", "CONNECT"];
+  const DesktopNavLinks = ["HOME", "ABOUT", "PROJECTS"];
 
   return (
     <>
@@ -49,7 +49,7 @@ const Navbar = () => {
         transition={{
           duration: 0.6,
         }}
-        className="hidden lg:flex fixed top-0 left-0 w-full z-[100]  px-28 py-12 justify-between items-center"
+        className="hidden backdrop-blur lg:flex fixed top-0 left-0 w-full z-[100]  px-28 py-8 justify-between items-center"
       >
         {/* Logo / Name */} {/* Menu Items */}{" "}
         <motion.div
@@ -60,9 +60,10 @@ const Navbar = () => {
             opacity: 1,
           }}
           transition={{
-            delay: 1.6,
+            delay: 0.8,
+            duration:0.6
           }}
-          className="flex space-x-20 text-lg  items-center justify-between text-gray-600"
+          className="flex space-x-6 text-lg  items-center justify-between text-gray-600"
         >
           {" "}
           {DesktopNavLinks.map((label) => (
@@ -71,12 +72,10 @@ const Navbar = () => {
               href={`#${label.toLowerCase()}`}
               className="relative group "
             >
-              <span className="hover:text-gray-900  transition duration-300">
+              <span className="text-stone-900 hover:text-stone-400 font-semibold  transition duration-300">
                 {label}
               </span>
-              <span className="absolute opacity-0 group-hover:opacity-100 left-1/2 -translate-x-1/2 bottom-0 h-[2px] w-0 bg-gray-900 transition-all duration-300 group-hover:w-full">
-                {" "}
-              </span>{" "}
+             
             </Link>
           ))}{" "}
         </motion.div>{" "}
@@ -88,14 +87,15 @@ const Navbar = () => {
             opacity: 1,
           }}
           transition={{
-            delay: 1.6,
+            delay: 0.8,
+            duration:0.6
           }}
           className="flex justify-center"
         >
-          <Link href="#projects">
-            <motion.span className="bg-black rounded-sm text-[16px] sm:text-[1rem] text-gray-200  hover:bg-black/80 text-white px-6 py-5 lg:px-14 lg:py-6 text-xl font-medium transition duration-300">
-              Projects{" "}
-            </motion.span>{" "}
+          <Link href="#connect">
+            <motion.span className="bg-black/90 rounded-md  text-gray-200  hover:bg-black/80 text-white px-6 py-5 lg:px-14 lg:py-5 font-semibold transition duration-300">
+              CONNECT
+            </motion.span>
           </Link>{" "}
         </motion.div>{" "}
       </motion.nav>{" "}
@@ -122,15 +122,16 @@ const Navbar = () => {
             opacity: 1,
           }}
           transition={{
-            delay: 1.6,
+            delay: 0.8,
+            duration:0.6
           }}
           onClick={toggleMenu}
-          className="transition-all duration-300 cursor-pointer"
+          className="transition-all duration-300 cursor-pointer backdrop-blur rounded-md"
         >
           {menuOpen ? (
-            <RxCross2 className="text-gray-600 text-4xl transition-transform duration-300 rotate-90" />
+            <RxCross2 className="text-stone-600 text-4xl transition-transform duration-300 rotate-90" />
           ) : (
-            <IoIosMenu className="text-gray-600 text-4xl transition-transform duration-300" />
+            <IoIosMenu className="text-stone-600 text-4xl transition-transform duration-300" />
           )}{" "}
         </motion.button>{" "}
       </motion.div>{" "}

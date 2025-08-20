@@ -30,19 +30,19 @@ import { motion } from "framer-motion";
 const About = () => {
   const AboutData = [
     {
-      title: "Who Am I ?",
+      title: "HALF A DECADE PROFESSIONAL",
       description:
-        "I'm Karan, a professional full-stack software engineer with over 4 years of hands-on experience building scalable web applications and designing robust system architectures. I love challenges, and always excited to solve and learn something new from it.",
+        "I'm Karan, a professional full-stack developer (Freelancer), with half a decade of hands-on experience building scalable web applications and designing robust system architectures. I love challenges, and always excited to solve and learn something new from them.",
       lottie: buildAnimation,
     },
     {
-      title: "What I Build ?",
+      title: "THINGS I BUILD",
       description:
         "I build full-fledged platforms, admin panels, and developer-focused tools using modern frameworks. I'm experienced in designing and developing user-friendly interfaces and seamless user experiences. I also create custom animations, like the ones used in this portfolio, to elevate product aesthetics. Recently, I've been focusing on building SaaS tools that solve real problems and offer standout UX.",
       lottie: buildAnimation,
     },
     {
-      title: "Technologies I Use.",
+      title: "TECHNOLOGIES I USE",
       description:
         "As a full-stack developer, my core expertise lies in building frontend interfaces, backend systems, and efficient APIs. But I don't limit myself there. I'm always tinkering with tools and technologies beyond my main stack. Lately, I've been exploring machine learning and AI, driven by curiosity and the potential they hold in shaping tomorrow's products.",
       lottie: techUsedAnimation,
@@ -74,17 +74,36 @@ const About = () => {
   return (
     <div className="w-full">
       {/* Header */}
-      <div className="flex justify-center bg-black text-white py-[clamp(8rem,10vw,20rem)]">
-        <motion.h2
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.1 }}
-          className="text-[clamp(2rem,4vw,4rem)] text-stone-400"
-        >
-          Me ?
-        </motion.h2>
-      </div>
+      <motion.div
+      id="about"
+       className="flex flex-col lg:items-center   justify-center py-[clamp(4rem,5vw,12rem)] px-[clamp(1.5rem,6vw,16rem)]">
+        {/* Masking wrapper */}
+        <div className="flex flex-col">
+        <div className="overflow-hidden  ">
+          <motion.h2
+            initial={{opacity:0, y: "clamp(3rem,8vw,10rem)" }} // start hidden below
+            whileInView={{opacity:1, y: 0 }} // slide up into view
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            viewport={{ once: false, amount: 0.1 }}
+            className="text-[clamp(3rem,8vw,6.5rem)] text-stone-800 font-semibold leading-[clamp(2.5rem,8vw,6rem)]"
+          >   
+              WHO  <br /> AM I ?
+          </motion.h2>
+        </div>
+        
+          <motion.h2
+            initial={{opacity:0, x:-30 }} // start hidden below
+            whileInView={{opacity:1, x: 0 }} // slide up into view
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            viewport={{ once: false, amount: 0.1 }}
+            className="text-[clamp(1rem,2vw,1.5rem)] text-stone-800 px-[clamp(0.2rem,0.3vw,0.5rem)]"
+          >   
+              THINGS ABOUT ME
+          </motion.h2>
+        </div>
+        
+        
+      </motion.div>
       <span id="about" />
 
       {/* About Cards */}
@@ -98,13 +117,13 @@ const About = () => {
               ${!isEven ? "lg:flex-row-reverse" : ""}`}
             >
               {/* Text Content */}
-              <div className="w-full flex-1 space-y-6 text-center lg:text-left">
+              <div className="w-full flex-1 space-y-6 ">
                 <motion.h3
                   initial={{ opacity: 0, y: 60 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.1 }}
-                  className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800"
+                  className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800 leading-[1.08]"
                 >
                   {about.title}
                 </motion.h3>
@@ -113,7 +132,7 @@ const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
                   viewport={{ once: true, amount: 0.1 }}
-                  className="text-[clamp(1rem,1.7vw,1.5rem)] text-muted-foreground"
+                  className="text-[clamp(1rem,1.7vw,1.5rem)] text-muted-foreground leading-[1.08]"
                 >
                   {about.description}
                 </motion.p>

@@ -21,31 +21,17 @@ const iconMap = {
 const Projects = () => {
   const projectData = [
     {
-      title: "Client CRM",
+      title: "WORKALYN CRM",
       description:
-        "Client CRM is my custom-built tool designed to help freelancers and solopreneurs manage their client outreach more efficiently. Inspired by Notion's simplicity and flexibility, this CRM includes all essential features, lead tracking, follow-ups, notes, and pipeline management, into one streamlined interface.",
+        "WorkAyln CRM is my custom-built tool designed to help freelancers and solopreneurs manage their client outreach more efficiently. Inspired by Notion's simplicity and flexibility, this CRM includes all essential features, lead tracking, follow-ups, notes, and pipeline management, into one streamlined interface.",
       image: "/images/project1.png",
-      tech_used: [
-        "Next.js",
-        "Tailwind CSS",
-        "GraphQL",
-        "Prisma",
-        "Cloudinary",
-        "Socket.IO",
-        "Firebase Auth",
-      ],
-      icons: [
-        "RiNextjsLine",
-        "SiTailwindcss",
-        "GrGraphQl",
-        "SiPrisma",
-        "IoLogoFirebase",
-      ],
+      tech_used: ["Next.js", "Tailwind CSS", "GraphQL", "Prisma", "Cloudinary", "Socket.IO", "Firebase Auth"],
+      icons: ["RiNextjsLine", "SiTailwindcss", "GrGraphQl", "SiPrisma", "IoLogoFirebase"],
       live: "https://client-tracker-iamkaranroushans-projects.vercel.app/",
       github: "https://github.com/iamkaranroushan/Client-Tracker",
     },
     {
-      title: "AE to JSON Exporter",
+      title: "AE TO JSON EXPORTER",
       description:
         "This is an After Effects extension plug-in to export .ae files to JSON. This plug-in allows users to render even complex gradients, a feature Bodymovin and Lottie typically don’t support for the browser. A useful tool for developers and animators working on the web.",
       image: "/images/project2.png",
@@ -56,66 +42,61 @@ const Projects = () => {
         "Lottie (Custom Format)",
         "Gradient Animation Engine",
       ],
-      icons: [
-        "RiNextjsLine",
-        "SiTailwindcss",
-        "GrGraphQl",
-        "SiPrisma",
-        "IoLogoFirebase",
-      ],
+      icons: ["RiNextjsLine", "SiTailwindcss", "GrGraphQl", "SiPrisma", "IoLogoFirebase"],
       live: "https://deepakmart.com",
       github: "https://github.com/iamkaranroushan/grocery_application_frontend",
     },
     {
-      title: "In-Progress Applications",
-      description: "Some of the under development SAAS projects",
+      title: "MORE WORKS",
+      description: "Some of the In-progress SAAS projects",
       image: "/images/project3.png",
-      tech_used: [
-        "Next.js",
-        "Tailwind CSS",
-        "GraphQL",
-        "Prisma",
-        "Node.js",
-        "Firebase",
-        "Stripe",
-      ],
-      icons: [
-        "RiNextjsLine",
-        "SiTailwindcss",
-        "GrGraphQl",
-        "SiPrisma",
-        "IoLogoFirebase",
-      ],
+      tech_used: ["Next.js", "Tailwind CSS", "GraphQL", "Prisma", "Node.js", "Firebase", "Stripe"],
+      icons: ["RiNextjsLine", "SiTailwindcss", "GrGraphQl", "SiPrisma", "IoLogoFirebase"],
       live: "https://deepakmart.com",
       github: "https://github.com/iamkaranroushan/grocery_application_frontend",
     },
   ];
 
   return (
-    <motion.div
-      className="w-full overflow-x-hidden">
+    <motion.div className="w-full overflow-x-hidden">
       {" "}
-
-      {/* Header */}{" "}
+      
+      {/* Header */}
       <motion.div
-        className="flex justify-center bg-black text-white py-[clamp(8rem,10vw,20rem)]">
+       id="projects"
+       className="flex flex-col lg:items-center   justify-center py-[clamp(4rem,5vw,12rem)] px-[clamp(1.5rem,6vw,16rem)]">
+        {/* Masking wrapper */}
+        <div className="flex flex-col">
+        <div className="overflow-hidden  ">
+          <motion.h2
+            initial={{opacity:0, y: "clamp(3rem,8vw,10rem)" }} // start hidden below
+            whileInView={{opacity:1, y: 0 }} // slide up into view
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            viewport={{ once: false, amount: 0.1 }}
+            className="text-[clamp(3rem,8vw,6.5rem)] text-stone-800 font-semibold leading-[clamp(2.5rem,8vw,6rem)]"
+          >   
+              FEATURED <br /> WORK
+          </motion.h2>
+        </div>
+        
+          <motion.h2
+            initial={{opacity:0, x:-30 }} // start hidden below
+            whileInView={{opacity:1, x: 0 }} // slide up into view
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            viewport={{ once: false, amount: 0.1 }}
+            className="text-[clamp(1rem,2vw,1.5rem)] text-stone-800 px-[clamp(0.1rem,2vw,1rem)]"
+          >   
+              MY RECENT PICKS
+          </motion.h2>
+        </div>
+        
+        
+      </motion.div>
 
-        <motion.h2
-          initial={{ scale: 0, }}
-          whileInView={{ scale: 1, }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.1 }}
-          className="text-[clamp(2rem,4vw,4rem)] text-stone-400">
-          Projects{" "}
-        </motion.h2>{" "}
-      </motion.div>{" "}
 
-
-
-
-      <span id="projects" />
+      <span />
       {/* Project Cards */}{" "}
-      <div className="flex flex-col space-y-24 lg:space-y-40 py-24 lg:mb-30 px-6 sm:px-10 lg:px-28">
+      <div className="flex flex-col space-y-24 lg:space-y-40 py-[clamp(0.8rem,2vw,2rem)] px-6 sm:px-10 lg:px-28">
         {" "}
         {projectData.map((project, index) => {
           const isEven = index % 2 === 0;
@@ -130,19 +111,18 @@ const Projects = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
                 viewport={{ once: true, amount: 0.2 }}
-                className="lg:hidden w-full bg-white rounded-3xl overflow-hidden relative group">
+                className="lg:hidden w-full bg-white rounded-3xl overflow-hidden relative group"
+              >
                 <div className="w-full h-[400px] bg-cover bg-center">
-                  <motion.div
-
-                    className="absolute inset-0 bg-black/60 group-hover:bg-black/80 transition-all duration-300" />
-                  <motion.div
-                    className="absolute flex flex-col gap-2 bottom-0 w-full p-6 text-white z-10">
+                  <motion.div className="absolute inset-0 bg-black/60 group-hover:bg-black/80 transition-all duration-300" />
+                  <motion.div className="absolute flex flex-col gap-2 bottom-0 w-full p-6 text-white z-10">
                     <motion.p
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6, duration: 1, ease: "easeInOut" }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      className="text-[60px] sm:text-[90px] font-semibold text-white/20">
+                      viewport={{ once: true, amount: 0.1 }}
+                      className="text-[60px] sm:text-[90px] font-semibold text-white/20"
+                    >
                       {" "}
                       {projectNumber}{" "}
                     </motion.p>{" "}
@@ -155,9 +135,11 @@ const Projects = () => {
                           <motion.span
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6 + i * 0.1, duration: 0.8, ease: "easeInOut" }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            key={i} className="text-white text-2xl">
+                            transition={{ delay: 0.2 + i * 0.1, duration: 0.8, ease: "easeInOut" }}
+                            viewport={{ once: true, amount: 0.1 }}
+                            key={i}
+                            className="text-white text-2xl"
+                          >
                             <Icon />
                           </motion.span>
                         ) : null;
@@ -168,8 +150,9 @@ const Projects = () => {
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 1, duration: 1, ease: "easeInOut" }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      className="text-[clamp(1.5rem,5vw,4rem)] font-bold">
+                      viewport={{ once: true, amount: 0.1 }}
+                      className="text-[clamp(1.5rem,5vw,4rem)] font-bold leading-[1.08]"
+                    >
                       {" "}
                       {project.title}{" "}
                     </motion.h3>{" "}
@@ -178,34 +161,33 @@ const Projects = () => {
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 1.4, duration: 1, ease: "easeInOut" }}
-                      viewport={{ once: true, amount: 0.2 }}
-                      className="text-[clamp(0.8rem,1.7vw,1.5rem)] text-white/80">
+                      viewport={{ once: true, amount: 0.1 }}
+                      className="text-[clamp(0.8rem,1.7vw,1.5rem)] text-white/80 leading-[1.08]"
+                    >
                       {" "}
                       {project.description}{" "}
                     </motion.p>{" "}
-
                   </motion.div>{" "}
                 </div>{" "}
               </motion.div>
-
-
               {/* 👇 Desktop Layout */}{" "}
               <motion.div
-                className={`hidden lg:flex h-[80vh] justify-between items-center gap-[clamp(2rem,5vw,8rem)] ${!isEven ? "flex-row-reverse" : ""
-                  }`}
+                className={`hidden lg:flex h-[80vh] justify-between items-center gap-[clamp(2rem,5vw,8rem)] ${
+                  !isEven ? "flex-row-reverse" : ""
+                }`}
               >
                 {/* 👇 Image or Lottie Section */}{" "}
                 <motion.div
-                  initial={{ opacity: 0, x: !isEven ? 500 : -500, }}
-                  whileInView={{ opacity: 1, x: 0, }}
+                  initial={{ opacity: 0, x: !isEven ? 500 : -500 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1.6, ease: "easeOut" }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.1 }}
                   className="w-[clamp(300px,40vw,700px)] rounded-3xl overflow-hidden bg-gray-100"
                   style={{ height: "clamp(300px, 50vw, 600px)" }} // 👈 responsive height }}
                 >
                   {" "}
                   {project.image ? (
-                    <div className="w-full h-full bg-cover bg-gradient-to-b from-gray-100 to-gray-500 " />
+                    <div className="w-full h-full bg-cover bg-gradient-to-b from-black/10 to-black/50 " />
                   ) : (
                     <Lottie
                       animationData={uiCardAnimation}
@@ -215,29 +197,24 @@ const Projects = () => {
                     />
                   )}{" "}
                 </motion.div>
-
                 {/* 👇 Text Section */}{" "}
-                <motion.div
-                  className="flex-1 flex flex-col items-start gap-4">
-
+                <motion.div className="flex-1 flex flex-col items-start gap-4">
                   <motion.div
-                    initial={{ opacity: 0, y: 60, }}
+                    initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    className="flex justify-between items-center w-full">
-                    <p className="text-[clamp(2rem,6vw,6rem)] font-semibold text-primary/10">
-                      {" "}
-                      {projectNumber}{" "}
-                    </p>{" "}
+                    viewport={{ once: false, amount: 0.1 }}
+                    className="flex justify-between items-center w-full"
+                  >
+                    <p className="text-[clamp(2rem,6vw,6rem)] font-semibold text-primary/10"> {projectNumber} </p>{" "}
                   </motion.div>
-
                   <motion.div
-                    initial={{ opacity: 0, y: 60, }}
+                    initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    className="flex flex-wrap gap-2">
+                    transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="flex flex-wrap gap-2"
+                  >
                     {" "}
                     {project.tech_used.map((tech, i) => (
                       <span
@@ -249,32 +226,37 @@ const Projects = () => {
                     ))}{" "}
                   </motion.div>
                   {/*title*/}
-                  <motion.p
-                    initial={{ opacity: 0, y: 60, }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    className="text-[clamp(1rem,1.7vw,1.5rem)] text-muted-foreground">
-                    {" "}
-                    {project.description}{" "}
-                  </motion.p>
+                  
                   {/*description*/}
                   <motion.h3
-                    initial={{ opacity: 0, y: 60, }}
+                    initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.1 }}
-                    className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800 leading-tighter">
+                    className="text-[clamp(2rem,5vw,4rem)] font-bold text-stone-800 leading-[1.08]"
+                  >
                     {" "}
                     {project.title}{" "}
                   </motion.h3>
+
+                  <motion.p
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.1 }}
+                    className="text-[clamp(1rem,1.7vw,1.5rem)] text-muted-foreground leading-[1.08]"
+                  >
+                    {" "}
+                    {project.description}{" "}
+                  </motion.p>
                   {/*links*/}
-                  <motion.div
-                    initial={{ opacity: 0, y: 60, }}
+                  {/*<motion.div
+                    initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.1 }}
-                    className="flex items-center">
+                    className="flex items-center"
+                  >
                     <Link
                       href={project.live}
                       target="_blank"
@@ -291,10 +273,8 @@ const Projects = () => {
                     >
                       GitHub{" "}
                     </Link>{" "}
-                  </motion.div>{" "}
-
+                  </motion.div>{" "}*/}
                 </motion.div>{" "}
-
               </motion.div>{" "}
             </div>
           );
