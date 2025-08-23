@@ -72,7 +72,7 @@ const About = () => {
   ];
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
       {/* Header */}
       <motion.div
       id="about"
@@ -234,18 +234,34 @@ const About = () => {
       </div>
 
       {/* Final Section */}
-      <div className="flex justify-center bg-black text-white py-[clamp(8rem,10vw,20rem)]">
-        <motion.h2
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.1 }}
-          className="text-[clamp(2rem,4vw,4rem)] text-stone-400"
-        >
-          Connect
-        </motion.h2>
-      </div>
-      <span id="connect" />
+      <motion.div
+      id="connect"
+       className="flex flex-col lg:items-center justify-center bg-black/80 py-[clamp(2.5rem,5vw,8rem)] px-[clamp(1.5rem,6vw,16rem)]">
+        {/* Masking wrapper */}
+        <div className="flex flex-col">
+        <div className="overflow-hidden">
+          <motion.h2
+            initial={{opacity:0, y: "clamp(1.5rem,5vw,9rem)" }} // start hidden below
+            whileInView={{opacity:1, y: 0 }} // slide up into view
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            viewport={{ once: false, amount: 0.1 }}
+            className="text-[clamp(3rem,8vw,6.5rem)] text-stone-200 font-semibold leading-[clamp(2.4rem,10vw,6.7rem)]"
+          >   
+              CONNECT
+          </motion.h2>
+        </div>
+        
+          <motion.h2
+            initial={{opacity:0, x:-30 }} // start hidden below
+            whileInView={{opacity:1, x: 0 }} // slide up into view
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            viewport={{ once: false, amount: 0.1 }}
+            className="text-[clamp(1rem,2vw,1.5rem)] text-stone-200  px-[clamp(0.2rem,0.3vw,0.5rem)]"
+          >   
+              STAY IN TOUCH
+          </motion.h2>
+        </div>
+      </motion.div>
     </div>
   );
 };

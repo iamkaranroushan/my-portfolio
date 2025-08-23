@@ -6,21 +6,23 @@ import Navbar from "@/Components/Navbar/navbar";
 import Projects from "@/Components/Projects/projects";
 import React from "react";
 
-export default function home() {
+
+export default function Home() {
   return (
     <Layout>
       <Hero />
       <Projects />
 
-      {/* Stack Container */}
-      <div className="relative h-[600vh] sm:h-[480vh] md:h-[470vh] lg:h-[600vh]">
-        {/* Connect (background layer) */}
-        <div className="sticky top-0 h-screen">
-          <Connect />
-        </div>
-        {/* About (scrolling above) */}
-        <div className="bg-white absolute top-0 w-full z-10">
+      {/* Stacked zone */}
+      <div className="relative min-h-screen flex flex-col">
+        {/* Connect pinned to bottom half of the viewport */}
+        <div className="flex-grow z-[10]">
           <About />
+        </div>
+
+        {/* Connect always pinned to bottom */}
+        <div className="sticky bottom-0">
+          <Connect />
         </div>
       </div>
     </Layout>
