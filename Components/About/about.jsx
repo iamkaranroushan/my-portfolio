@@ -234,34 +234,28 @@ const About = () => {
       </div>
 
       {/* Final Section */}
+      <div className="relative w-full overflow-hidden bg-black/80 py-[clamp(2.5rem,5vw,8rem)]">
+      {/* Wrapper that moves left infinitely */}
       <motion.div
-      id="connect"
-       className="flex flex-col lg:items-center justify-center bg-black/80 py-[clamp(2.5rem,5vw,8rem)] px-[clamp(1.5rem,6vw,16rem)]">
-        {/* Masking wrapper */}
-        <div className="flex flex-col">
-        <div className="overflow-hidden">
-          <motion.h2
-            initial={{opacity:0, y: "clamp(1.5rem,5vw,9rem)" }} // start hidden below
-            whileInView={{opacity:1, y: 0 }} // slide up into view
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            viewport={{ once: false, amount: 0.1 }}
-            className="text-[clamp(3rem,8vw,6.5rem)] text-stone-200 font-semibold leading-[clamp(2.4rem,10vw,6.7rem)]"
-          >   
+        className="flex space-x-16"
+        animate={{ x: ["0%", "-100%"] }}
+        transition={{
+          ease: "linear",
+          duration: 15, // speed of movement
+          repeat: Infinity,
+        }}
+      >
+        {/* Repeat blocks so it loops smoothly */}
+        {[...Array(7)].map((_, i) => (
+          <div key={i} className="flex flex-col items-center">
+            <h2 className="text-[clamp(3rem,8vw,6.5rem)] title-outline text-stone-200 font-semibold leading-[clamp(2.4rem,10vw,6.7rem)]">
               CONNECT
-          </motion.h2>
-        </div>
-        
-          <motion.h2
-            initial={{opacity:0, x:-30 }} // start hidden below
-            whileInView={{opacity:1, x: 0 }} // slide up into view
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            viewport={{ once: false, amount: 0.1 }}
-            className="text-[clamp(1rem,2vw,1.5rem)] text-stone-200  px-[clamp(0.2rem,0.3vw,0.5rem)]"
-          >   
-              STAY IN TOUCH
-          </motion.h2>
-        </div>
+            </h2>
+          </div>
+        ))}
       </motion.div>
+    </div>
+
     </div>
   );
 };

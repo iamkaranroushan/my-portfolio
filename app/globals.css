@@ -12,6 +12,15 @@ html {
   scroll-behavior: smooth;
 }
 
+
+.title-outline {
+  font-size:clamp(3rem,8vw,6.5rem);            /* adjust as needed */
+  font-weight: 900;             /* makes the outline cleaner */
+  color: transparent;           /* no fill */
+  -webkit-text-stroke: 2px white;  /* outline thickness + color */
+  text-stroke: 2px white;          /* for future spec */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

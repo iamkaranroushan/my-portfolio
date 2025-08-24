@@ -49,18 +49,9 @@ const Connect = () => {
         </motion.h2>
 
         {/* Contact + Socials */}
-        <div className="py-10 sm:py-20">
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Contact Info */}
-            <div className="flex-1 space-y-10 text-neutral-700 text-base sm:text-lg lg:text-xl">
-              
-
-              {/*socials*/}
-
+        <div className="py-[clamp(1.8rem,3vw,3rem)]">
               <div className="flex flex-col space-y-4 justify-center">
-                {/*icons heading */}
-                {/*<span className="text-[clamp(1.5rem,1.7vw,1.8rem)] font-semibold text-stone-700">Socials</span>
-                {/*icons */}
+                
                 <motion.div
                   initial={{ y: 10 }}
                   whileInView={{ y: 0 }}
@@ -83,7 +74,7 @@ const Connect = () => {
                           <span className="text-[clamp(1.5rem,1.7vw,1.5rem)]">
                             {Item.Icon}
                           </span>
-                          <h3 className="hidden lg:block text-[clamp(0.8rem,2vw,1rem)] font-normal  ">{Item.display_text}</h3>
+                          <h3 className="hidden lg:block text-[clamp(0.8rem,2vw,1rem)] font-normal">{Item.display_text}</h3>
                         </Link>
                       </div>
                     ))
@@ -91,10 +82,8 @@ const Connect = () => {
 
                 </motion.div>
               </div>
-
-            </div>
-          </div>
         </div>
+         
       </div>
 
       {/* Footer */} {/* Footer */} {/* Footer */}
