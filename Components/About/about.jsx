@@ -237,7 +237,7 @@ const About = () => {
       <div className="relative w-full overflow-hidden bg-black/80 py-[clamp(2.5rem,5vw,8rem)]">
       {/* Wrapper that moves left infinitely */}
       <motion.div
-        className="flex space-x-16"
+        className="flex space-x-8"
         animate={{ x: ["0%", "-100%"] }}
         transition={{
           ease: "linear",

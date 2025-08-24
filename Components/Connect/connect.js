@@ -1,0 +1,107 @@
+"use client";
+
+import React from "react";
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
+import { GoHeart } from "react-icons/go";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { CiMail } from "react-icons/ci";
+import { MdOutlineLocalPhone } from "react-icons/md";
+import { MdArrowOutward } from "react-icons/md";
+import { FaArrowRightLong } from "react-icons/fa6";
+
+const Connect = () => {
+  const socialLinks = [
+    
+    {
+      Icon: <FaLinkedin />,
+      title: "Linked In",
+      display_text: "/karanroushan",
+      link: "https://linkedin.com/in/karanroushan",
+    },
+    {
+      Icon: <FaGithub />,
+      title: "Github",
+      display_text: "/iamkaranroushan",
+      link: "https://github.com/iamkaranroushan",
+    },
+    {
+      Icon: <FaInstagram />,
+      title: "Instagram",
+      display_text: "/karandoescode",
+      link: "https://instagram.com/karandoescode",
+    },
+  ];
+
+  return (
+    <div className="w-full flex flex-col bg-black/80">
+      {/* Main Content */}
+      <div className="px-6 sm:px-10 lg:px-28 ">
+        <div className="flex py-2 items-center flex-wrap ">
+          <h1 className="text-stone-400 text-[clamp(1.5rem,4vw,2.5rem)] leading-tight">Let's have a <span className="text-stone-200"> CHAT </span></h1>
+          <span className="ml-2 text-stone-200 text-[clamp(1.2rem,4vw,2.2rem)]">
+            <FaArrowRightLong />
+          </span>
+        </div>
+
+        <motion.h2
+          initial={{ y: 30 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="text-[clamp(1rem,1.7vw,1.5rem)] max-w-4xl  text-stone-400 "
+        >
+          Have an idea, challenge, or just want to collaborate ? Let me help turn your problem into a powerful solution.
+        </motion.h2>
+
+        {/* Contact + Socials */}
+        <div className="py-[clamp(1.8rem,3vw,3rem)]">
+          <div className="flex flex-col space-y-4 justify-center">
+            <motion.div
+              initial={{ y: 10 }}
+              whileInView={{ y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.1 }}
+              className=" flex lg:flex-row flex-wrap items-center gap-6"
+            >
+              {socialLinks.map((Item, index) => (
+                <div key={index} className="">
+                  <Link
+                    href={Item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-1 text-stone-400 hover:text-white transition-all ease-in-out duration-300"
+                  >
+                    <span className="text-[clamp(1.5rem,1.7vw,1.5rem)]">{Item.Icon}</span>
+                    <h3 className="hidden lg:block text-[clamp(0.8rem,2vw,1rem)] font-normal">{Item.display_text}</h3>
+                  </Link>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </div>
+      {/* Footer */} {/* Footer */} {/* Footer */}
+      <div className=" px-6 sm:px-10 lg:px-28 text-xs lg:text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4 w-full py-6">
+        <div className="text-left text-stone-400">
+          <p>
+            designed and coded with <GoHeart className="inline w-4 h-4 text-red-500" /> by KARAN ROUSHAN
+          </p>
+        </div>
+        <p className="text-xs text-stone-400 text-left md:text-right">
+          &copy; {new Date().getFullYear()}{" "}
+          <Link
+            href="https://www.karanroushan.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline text-stone-400 hover:text-white transition-colors duration-300"
+          >
+            www.karanroushan.com
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Connect;
